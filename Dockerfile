@@ -14,7 +14,8 @@ RUN npm install
 COPY . .
 
 #5 Tell the image what to do when it starts as a container
-CMD ["npm","run","build"]
+#CMD ["npm","run","build"]
+RUN npm run build
 
 
 #PRODUCTION Phase
@@ -24,3 +25,8 @@ EXPOSE 80
 
 #2 Copy everything from builder (/app/builder) phase to working directory of Nginx
 COPY --from=0 /app/build /usr/share/nginx/html
+
+
+
+
+
