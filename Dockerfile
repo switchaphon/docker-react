@@ -14,7 +14,7 @@ RUN npm install
 COPY . .
 
 #5 Tell the image what to do when it starts as a container
-CMD ["npm","run","start"]
+CMD npm run start
 
 
 #PRODUCTION Phase
