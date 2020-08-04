@@ -19,6 +19,7 @@ CMD ["npm","run","start"]
 #PRODUCTION Phase
 #1 Use an existing docker image as a base
 FROM nginx 
+EXPOSE 80
 
 #2 Copy everything from builder (/app/builder) phase to working directory of Nginx
 COPY --from=builder /app/build /usr/share/nginx/html
