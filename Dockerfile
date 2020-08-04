@@ -11,7 +11,7 @@ COPY package*.json ./
 RUN npm install
 
 #4 Copy all source code into the container
-COPY ./ ./
+COPY . .
 
 #5 Tell the image what to do when it starts as a container
 CMD ["npm","run","start"]
