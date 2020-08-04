@@ -2,7 +2,24 @@ language: generic
 sudo: required
 services:
     - docker
+
+#1 BUILD Phase
 before_install:
     - docker build -t switchaphon/docker-react -f Dockerfile.dev .
+
+#2 TEST Phase
 script:
     - docker run -e CI=true switchaphon/docker-react npm run test
+
+#3 DEPLOY Phase
+deploy:
+    provider: elasticbeanstalk #connect to cloud provider
+    region: "us-east-1" #from EB's URL
+    name: docker-react #from EB's dashboard
+    env: "DockerReact-env" #from EB's dashboard
+    bucket_name: "elasticbeanstalk-us-east-1-437264012755" #from S3 service (auto create from EB)
+    bucket_path: "docker-react" #Same as App name
+    on:
+        branch: master
+    access_key_id: "$AWS_ACCESS_KEY"
+    secret_access_key: "$AWS_SECRET_KEY"
