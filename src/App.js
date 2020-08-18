@@ -8,7 +8,7 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
-          Using "name" in .travis.yml
+          Using "app:" in .travis.yml
         </p>
         <a
           className="App-link"
