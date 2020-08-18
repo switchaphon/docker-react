@@ -15,7 +15,7 @@ script:
 deploy:
     provider: elasticbeanstalk #connect to cloud provider
     region: "us-east-1" #from EB's URL
-    app: docker-react #from EB's dashboard
+    app: docker-react #from EB's dashboard   x
     env: "DockerReact-env" #from EB's dashboard
     bucket_name: "elasticbeanstalk-us-east-1-437264012755" #from S3 service (auto create from EB)
     bucket_path: "docker-react" #Same as App name
